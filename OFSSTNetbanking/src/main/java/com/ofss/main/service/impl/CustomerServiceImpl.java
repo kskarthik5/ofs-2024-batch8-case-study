@@ -1,6 +1,5 @@
 package com.ofss.main.service.impl;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -13,9 +12,7 @@ import com.ofss.main.repository.CustomerRepository;
 import com.ofss.main.service.CustomerService;
 
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.ParameterMode;
 import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.StoredProcedureQuery;
 
 @Service
 public class CustomerServiceImpl implements CustomerService{
@@ -28,17 +25,9 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 	@Override
 	public Map<String, Object> validate(String username, String password) {
-		   StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery("P_LOGIN_CHECK");
-	        storedProcedureQuery.registerStoredProcedureParameter(1, String.class, ParameterMode.IN);
-	        storedProcedureQuery.registerStoredProcedureParameter(2, String.class, ParameterMode.IN);
-	        storedProcedureQuery.registerStoredProcedureParameter(3, Integer.class, ParameterMode.OUT);
-	        storedProcedureQuery.registerStoredProcedureParameter(4,String.class, ParameterMode.OUT);
-	        storedProcedureQuery.setParameter(1, username);
-	        storedProcedureQuery.setParameter(2, password);
-	        Map<String,Object> map=new HashMap<String, Object>();
-	        map.put("status", (Integer)storedProcedureQuery.getOutputParameterValue(3));
-	        map.put("message", (String)storedProcedureQuery.getOutputParameterValue(4));
-	        return map;
+		   Map<String,Object> res=customerRepository.validate(username, password);
+		   res.put("data", customerRepository.findByUsername(username));
+	       return res;
 	}
 	@Override
 	public Customer getById(int customerId) {

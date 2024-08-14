@@ -8,7 +8,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedStoredProcedureQuery;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.ParameterMode;
 import jakarta.persistence.StoredProcedureParameter;
 import jakarta.persistence.Table;
@@ -37,7 +36,7 @@ public class Customer {
 	@Column(name = "phone")
 	private int phone;
 	@Column(name = "status")
-	private String status;
+	private String status="Active";
 
 	@Override
 	public String toString() {
