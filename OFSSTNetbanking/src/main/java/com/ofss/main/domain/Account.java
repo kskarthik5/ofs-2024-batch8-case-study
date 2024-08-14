@@ -21,7 +21,8 @@ procedureName = "P_CREATE_ACCOUNT", parameters = {
 @StoredProcedureParameter(mode = ParameterMode.IN, name = "customerId", type = Integer.class),
 @StoredProcedureParameter(mode = ParameterMode.IN, name = "accountType", type = String.class),
 @StoredProcedureParameter(mode = ParameterMode.OUT, name = "status", type = Integer.class),
-@StoredProcedureParameter(mode = ParameterMode.OUT, name = "message", type = String.class)})
+@StoredProcedureParameter(mode = ParameterMode.OUT, name = "message", type = String.class),
+@StoredProcedureParameter(mode = ParameterMode.OUT, name = "accountId", type = Integer.class)})
 public class Account {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,7 +39,7 @@ public class Account {
 	@Column(name = "interest_period")
 	private int interestPeriod;
 	@Column(name = "status")
-	private String status;
+	private String status="Active";
 	@Column(name = "account_type")
 	private String AccountType;
 	@ManyToOne
