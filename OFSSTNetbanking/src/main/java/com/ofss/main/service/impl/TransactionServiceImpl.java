@@ -1,5 +1,6 @@
 package com.ofss.main.service.impl;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +50,11 @@ public class TransactionServiceImpl implements TransactionService{
 		newT.setStatus((Integer)res.get("status"));
 		newT.setMessage((String)res.get("message"));
 		return transactionRepository.save(newT);
+	}
+
+	@Override
+	public List<Transaction> getAll(Account account) {
+		return transactionRepository.findAllForAccount(account.getAccountId());
 	}
 
 }

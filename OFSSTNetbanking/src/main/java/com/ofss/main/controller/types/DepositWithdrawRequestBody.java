@@ -2,7 +2,7 @@ package com.ofss.main.controller.types;
 
 import com.ofss.main.domain.Account;
 
-public class DepositWithdrawRequest {
+public class DepositWithdrawRequestBody {
 	private Account account;
 	private double amount;
 	public Account getAccount() {
@@ -17,10 +17,10 @@ public class DepositWithdrawRequest {
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
-	public DepositWithdrawRequest() {
+	public DepositWithdrawRequestBody() {
 		super();
 	}
-	public DepositWithdrawRequest(Account account, double amount) {
+	public DepositWithdrawRequestBody(Account account, double amount) {
 		super();
 		this.account = account;
 		this.amount = amount;
