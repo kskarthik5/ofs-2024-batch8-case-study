@@ -1,0 +1,16 @@
+<div class="">
+  <h1>Login</h1>
+  <div class="">
+    <oj-c-form-layout class="" id="myform">
+      <oj-c-input-text id="f1" label-hint="Username"
+        value="{{usernameValue}}"
+        required="true"
+        help.instruction="Enter username"></oj-c-input-text>
+      <oj-c-input-password id="f2" label-hint="Password"
+        value="{{passwordValue}}" 
+        required="true"
+        help.instruction="Enter password"></oj-c-input-password>
+    </oj-c-form-layout>
+    <oj-c-button id="login_submit_button" on-oj-action="[[handleLoginSubmit]]" chroming="callToAction" label="Login">
+  </div>
+</div>
