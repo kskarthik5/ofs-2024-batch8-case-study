@@ -1,0 +1,33 @@
+<div class="">
+    <h1>Register</h1>
+    <div class="">
+      <oj-c-form-layout id="myform">
+        <oj-c-input-text id="f1" label-hint="First Name"
+          value="{{firstNameValue}}"
+          required="true"
+          help.instruction="Enter First Name"></oj-c-input-text>
+        <oj-c-input-text id="f1" label-hint="Last Name"
+          value="{{lastNameValue}}"
+          required="true"
+          help.instruction="Enter Last Name"></oj-c-input-text>
+        <oj-c-input-text id="f1" label-hint="Username"
+          value="{{usernameValue}}"
+          required="true"
+          help.instruction="Enter Username"></oj-c-input-text>
+        <oj-c-input-password id="f2" label-hint="Password"
+          value="{{passwordValue}}" 
+          required="true"
+          help.instruction="Enter Password"></oj-c-input-password>
+          <oj-c-input-password id="f2" label-hint="Confirm password"
+          value="{{confirmPasswordValue}}" 
+          required="true"
+          help.instruction="Re-enter password"></oj-c-input-password>
+          <oj-c-input-password id="f2" label-hint="Phone number"
+          value="{{phoneNumberValue}}" 
+          required="true"
+          help.instruction="Enter Phone number along with international code"></oj-c-input-password>
+          <oj-c-button id="register_submit_button" on-oj-action="[[handleRegisterSubmit]]" chroming="callToAction" label="Login">
+  
+      </oj-c-form-layout>
+    </div>
+  </div>
