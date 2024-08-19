@@ -1,0 +1,38 @@
+<div class="oj-hybrid-padding">
+  <div id="conveyorbelt-action-cards-example" class="oj-flex">
+    <oj-conveyor-belt id="conveyorBelt" class="oj-lg-9 oj-md-9 oj-sm-12 oj-flex-item">
+      <span>
+        <oj-bind-for-each data="[[cardData]]">
+          <template data-oj-as="cardItem">
+            <oj-action-card class="demo-card oj-sm-margin-12x-vertical oj-sm-margin-2x-horizontal">
+              <div class="oj-sm-padding-4x oj-flex oj-sm-flex-direction-column">
+                <oj-avatar
+                  class="oj-sm-margin-1x-bottom"
+                  size="lg"
+                  src="[[cardItem.data.icon]]"></oj-avatar>
+                <span class="oj-typography-body-md oj-sm-margin-1x-bottom oj-text-color-primary">
+                  <oj-bind-text value="[[cardItem.data.title]]"></oj-bind-text>
+                </span>
+                <span class="oj-typography-body-sm oj-text-color-secondary oj-line-clamp-2">
+                  <oj-bind-text value="[[cardItem.data.description]]"></oj-bind-text>
+                </span>
+              </div>
+            </oj-action-card>
+          </template>
+        </oj-bind-for-each>
+      </span>
+    </oj-conveyor-belt>
+  </div>
+    <h1>Account information</h1>
+    <oj-table
+    id="table"
+    aria-label="account_details"
+    accessibility.row-header="fName"
+    data="[[dataprovider]]"
+    columns-default='{"sortable": "disabled"}'
+    columns='[{"headerText": "Account ID", "field": "accountId", "id": "accountId"},
+              {"headerText": "Account Type", "field": "accountType", "id": "accountType"},
+              {"headerText": "Balance", "field": "balance", "id": "balance"},
+              {"headerText": "Account Type", "field": "accountType", "id": "accountType"}]'
+    class="demo-table-container"></oj-table>
+  </div>
